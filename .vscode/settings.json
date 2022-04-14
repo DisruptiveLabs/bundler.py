@@ -1,0 +1,5 @@
+{
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.linting.flake8Path": "/home/frank/.cache/pypoetry/virtualenvs/bundler-bAQKy5RH-py3.10/bin/flake8heavened",
+}

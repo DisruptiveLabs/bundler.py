@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "bundler.py"
+version = "0.1.1"
+description = "A simple tool for packing shippable virtualenvs"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+homepage = "https://github.com/DisruptiveLabs/bundler.py"
+repository = "https://github.com/DisruptiveLabs/bundler.py"
+documentation = "https://github.com/DisruptiveLabs/bundler.py"
+keywords = ["virtualenv", "shippable", "packaging"]
+classifiers = [
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development",
+    "Topic :: System :: Archiving :: Packaging",
+]
+authors = ["Franklyn Tackitt <frank@comanage.com>"]
+packages = [{ include = "bundler.py" }]
+
+[tool.poetry.scripts]
+"bundlerpy" = "bundler:main"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+black = { version = "*", extras = ["devtools"] }
+flakeheaven = { version = "*", extras = ["devtools"] }
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 90
+
+[tool.flakeheaven.plugins]
+mccabe = ["+*"]
+pyflakes = ["+*"]
+pylint = ["+*", "-C0116"]
+pycodestyle = ["+*", "-W503"]
